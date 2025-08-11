@@ -1,27 +1,28 @@
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react' 
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Nav() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/features', label: 'Features' },
-    { href: '/pricing', label: 'Pricing' },
-    { href: '/blog', label: 'Blog' },
-  ]
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/features", label: "Features" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/blog", label: "Blog" },
+  ];
 
   return (
-    <nav className="bg-black/80 backdrop-blur-md border-b border-white/10 z-50 sticky top-0">
+    <nav className="bg-transparent z-50 sticky top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <a href="/" className="flex items-center">
-              <span className="text-white text-2xl font-bold tracking-tight">Neonbot</span>
-            </a>
-          </div>
+          <a
+            href="/"
+            className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]"
+          >
+            NeonBot
+          </a>
 
           {/* Desktop Links */}
           <div className="hidden sm:flex space-x-6">
@@ -29,9 +30,10 @@ export default function Nav() {
               <a
                 key={label}
                 href={href}
-                className="text-gray-300 hover:text-white hover:underline underline-offset-4 text-sm font-medium transition"
+                className="relative text-gray-300 hover:text-white text-sm font-medium transition"
               >
                 {label}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 transition-all duration-300 hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -40,7 +42,7 @@ export default function Nav() {
           <div className="sm:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white p-2"
+              className="text-cyan-300 hover:text-white focus:outline-none p-2 rounded-md hover:shadow-[0_0_10px_rgba(0,255,255,0.4)] transition"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -50,12 +52,12 @@ export default function Nav() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="sm:hidden bg-black/90 backdrop-blur-lg px-4 pb-4">
+        <div className="sm:hidden bg-black/80 backdrop-blur-lg px-4 pb-4 animate-fadeDown">
           {links.map(({ href, label }) => (
             <a
               key={label}
               href={href}
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10 transition"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-white/10 transition"
             >
               {label}
             </a>
@@ -63,5 +65,5 @@ export default function Nav() {
         </div>
       )}
     </nav>
-  )
+  );
 }
