@@ -13,9 +13,7 @@ export default function Nav() {
           <a
             href="#hero"
             className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(255,255,255,0.6)] cursor-pointer"
-          >
-            NeonBot
-          </a>
+          ><img src="/public/Logo.png" alt="" className="w-10 h-10 inline-block mr-2" />NeonBot</a>
 
           {/* Desktop Links */}
           <div className="hidden sm:flex space-x-6">
