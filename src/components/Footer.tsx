@@ -18,7 +18,7 @@ export default function Footer() {
           
           {/* Logo */}
           <div className="flex items-center text-2xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]">
-            <img src="/public/Logo.png" alt="" className="w-10 h-10 mr-2" />
+            <img src="/Logo.png" alt="" className="w-10 h-10 mr-2" />
             NeonBot
           </div>
 
