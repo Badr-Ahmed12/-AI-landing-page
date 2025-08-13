@@ -1,5 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
+import { motion , easeOut } from "framer-motion";
 import {
   Slack,
   Zap,
@@ -9,6 +8,7 @@ import {
   Database,
   Link2,
   Rocket,
+  BookText, // أيقونة بديلة لـ Notion (ممكن تغيرها)
 } from "lucide-react";
 
 interface IntegrationItem {
@@ -38,7 +38,7 @@ const integrations: IntegrationItem[] = [
   },
   {
     name: "Notion",
-    iconName: "Database",
+    iconName: "Notion",
     description:
       "Push insights, conversation summaries, and AI-generated content straight into your Notion workspace to keep everything organized and actionable.",
   },
@@ -62,7 +62,7 @@ const integrations: IntegrationItem[] = [
   },
 ];
 
-const IconMapper: Record<string, JSX.Element> = {
+const IconMapper: Record<string, React.ReactNode>= {
   Slack: <Slack size={32} className="text-[#4A154B] drop-shadow-[0_0_8px_#4A154B]" />,
   Zap: <Zap size={32} className="text-orange-400 drop-shadow-[0_0_8px_#fb923c]" />,
   Chrome: <Chrome size={32} className="text-blue-400 drop-shadow-[0_0_8px_#60a5fa]" />,
@@ -70,14 +70,14 @@ const IconMapper: Record<string, JSX.Element> = {
   Globe: <Globe size={32} className="text-red-400 drop-shadow-[0_0_8px_#f87171]" />,
   Database: <Database size={32} className="text-emerald-400 drop-shadow-[0_0_8px_#34d399]" />,
   Link2: <Link2 size={32} className="text-gray-300 drop-shadow-[0_0_8px_#d1d5db]" />,
+  Notion: <BookText size={32} className="text-gray-200 drop-shadow-[0_0_8px_#d1d5db]" />, // أيقونة بديلة
+  Default: <Database size={32} className="text-gray-400" />, // أيقونة افتراضية
 };
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
@@ -87,7 +87,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: easeOut },
   },
 };
 
@@ -96,9 +96,7 @@ export default function Integrations() {
     <section className="w-full py-24 px-4 text-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
-          <Rocket
-            className="w-10 h-10 text-cyan-400 drop-shadow-[0_0_8px_#0ff] inline-block animate-bounce"
-          />{" "}
+          <Rocket className="w-10 h-10 text-cyan-400 drop-shadow-[0_0_8px_#0ff] inline-block animate-bounce" />{" "}
           <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_8px_#0ff]">
             Powerful Integrations
           </span>
@@ -123,7 +121,7 @@ export default function Integrations() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-black/40 p-2 rounded-xl">
-                  {IconMapper[item.iconName]}
+                  {IconMapper[item.iconName] || IconMapper["Default"]}
                 </div>
                 <h3 className="text-lg font-semibold text-cyan-300">{item.name}</h3>
               </div>

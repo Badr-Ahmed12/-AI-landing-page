@@ -1,5 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
+import { motion , easeOut } from "framer-motion";
 import { Star, Quote, Speech } from "lucide-react";
 
 const testimonials = [
@@ -43,7 +42,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: easeOut },
   },
 };
 

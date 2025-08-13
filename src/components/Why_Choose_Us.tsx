@@ -1,5 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
+import { motion , easeOut } from "framer-motion";
 import {
   Bot,
   Zap,
@@ -60,7 +59,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } },
 };
 
 const WhyChooseUs = () => {

@@ -1,5 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
+ import { motion , easeOut } from "framer-motion";
 import {
   MessageCircle,
   Rocket,
@@ -95,7 +94,7 @@ export default function Plans() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: easeOut },
     },
   };
 

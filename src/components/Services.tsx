@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion , easeOut } from "framer-motion";
 import {
   Bot,
   BarChart2,
@@ -58,7 +58,7 @@ export default function Services() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.4, ease: "easeOut" },
+      transition: { duration: 0.4, ease: easeOut },
     },
   };
 
