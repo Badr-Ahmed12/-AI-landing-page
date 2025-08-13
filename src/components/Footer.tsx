@@ -1,13 +1,8 @@
 import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { links } from "../data/Navlinks";
 
 export default function Footer() {
-  const links = [
-    { label: "About", href: "/about" },
-    { label: "Features", href: "/features" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
-  ];
+ 
 
   const socials = [
     { icon: <Facebook className="w-5 h-5" />, href: "#" },

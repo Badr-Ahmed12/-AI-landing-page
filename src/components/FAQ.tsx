@@ -1,14 +1,6 @@
-"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ChevronDown,
-  Bot,
-  Lock,
-  Settings,
-  MessageCircle,
-  MessageCircleQuestionMarkIcon,
-} from "lucide-react";
+import { ChevronDown , Bot , Lock , Settings , MessageCircle , MessageCircleQuestionMarkIcon } from "lucide-react";
 
 const faqs = [
   {

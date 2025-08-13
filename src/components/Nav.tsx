@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { links } from "../data/Navlinks";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const links = [
-    { href: "#hero", label: "Home" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#integrations", label: "Integrations" },
-    { href: "#plans", label: "Pricing" },
-    { href: "#about", label: "About" },
-    { href: "#faq", label: "FAQ" },
-  ];
 
   return (
     <nav className="bg-transparent z-50 sticky top-0">

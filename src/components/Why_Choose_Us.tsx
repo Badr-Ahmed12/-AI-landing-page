@@ -1,13 +1,5 @@
 import { motion , easeOut } from "framer-motion";
-import {
-  Bot,
-  Zap,
-  ShieldCheck,
-  Palette,
-  Brain,
-  PlugZap,
-  Diamond,
-} from "lucide-react";
+import { Bot , Zap , ShieldCheck , Palette , Brain , PlugZap , Diamond } from "lucide-react";
 
 const features = [
   {

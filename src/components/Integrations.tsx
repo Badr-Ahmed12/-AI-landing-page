@@ -1,15 +1,5 @@
 import { motion , easeOut } from "framer-motion";
-import {
-  Slack,
-  Zap,
-  Chrome,
-  Server,
-  Globe,
-  Database,
-  Link2,
-  Rocket,
-  BookText, // أيقونة بديلة لـ Notion (ممكن تغيرها)
-} from "lucide-react";
+import { Slack , Zap , Chrome , Server , Globe , Database , Link2 , Rocket , BookText } from "lucide-react";
 
 interface IntegrationItem {
   name: string;

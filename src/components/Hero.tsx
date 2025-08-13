@@ -1,11 +1,9 @@
-"use client";
 import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative  text-white py-28 px-6 overflow-hidden">
-      {/* إضاءة خلفية ناعمة */}
       <div className="absolute inset-0">
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-500/20 blur-[150px] rounded-full"></div>
       </div>
